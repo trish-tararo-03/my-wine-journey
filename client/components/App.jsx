@@ -1,7 +1,14 @@
 import React from 'react'
+import Login from './Login'
+import Nav from './Nav'
 
-const App = () => {
-  return <div>React development has begun!</div>
+function App() {
+  return (
+    <>
+      <Nav />
+      <Login />
+    </>
+  )
 }
 
 export default App
