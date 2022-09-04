@@ -5,5 +5,5 @@ A Personal Project born from my personal need to improve my wine knowledge and w
 ### NPM Scripts
 npm install
 npm run knex migrate:latest
-npx run knex seed:run
+npm run knex seed:run
 npm run dev
