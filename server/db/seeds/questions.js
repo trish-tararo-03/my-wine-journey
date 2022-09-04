@@ -30,9 +30,9 @@ exports.seed = async function (knex) {
     {
       question_id: 4,
       question:
-        'What wine region is known for growing the grape variety Gerwurtztraminer?',
+        'How many registered wineries are there in New Zealand as of 2020?',
       is_active: false,
-      //Gisbourne
+      //716
     },
     {
       question_id: 5,

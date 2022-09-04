@@ -7,7 +7,7 @@ exports.up = function (knex) {
     table.increments('answers_id').primary()
     table.integer('question_id')
     table.varchar('answers')
-    table.integer('right_choice')
+    table.varchar('right_choice')
   })
 }
 
