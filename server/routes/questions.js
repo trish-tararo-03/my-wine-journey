@@ -6,11 +6,12 @@ const db = require('../db/db')
 const router = express.Router()
 
 //get questions route?
-router.get('/api/v1/questions', (req, res) => {
+///api/v1/questions
+router.get('/', (req, res) => {
   return db
     .getQuestions()
     .then((item) => {
-      console.log(item)
+      // console.log(item)
       res.json(item)
     })
     .catch((err) => {
