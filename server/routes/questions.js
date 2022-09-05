@@ -20,4 +20,17 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/:id', (req, res) => {
+  const id = req.params
+  return db
+    .getOneQuestion(id)
+    .then((item) => {
+      console.log(item)
+      res.json(item)
+    })
+    .catch((err) => {
+      console.error(err.message)
+      res.status(500).send('Server error')
+    })
+})
 module.exports = router

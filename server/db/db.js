@@ -6,4 +6,8 @@ function getQuestions(db = connection) {
   return db('questions').select()
 }
 
-module.exports = { getQuestions }
+function getOneQuestion(id, db = connection) {
+  return db('questions').where({ id }).first()
+}
+
+module.exports = { getQuestions, getOneQuestion }
