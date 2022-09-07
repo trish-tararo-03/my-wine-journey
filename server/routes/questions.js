@@ -9,7 +9,7 @@ const router = express.Router()
 ///api/v1/questions
 router.get('/', (req, res) => {
   return db
-    .getQuestions()
+    .getQuestionAndAnswers()
     .then((item) => {
       // console.log(item)
       res.json(item)
