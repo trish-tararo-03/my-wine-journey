@@ -11,11 +11,15 @@ function getOneQuestion(id, db = connection) {
 }
 
 function getQuestionAndAnswers(db = connection) {
-  return db('questions').join(
-    'answers',
-    'answers.answers_id',
-    'answers.question_id'
-  )
+  return db('questions')
+    .join('answers', 'answers.answers_id', 'answers.question_id')
+    .select(
+      'questions.question_id',
+      'questions.is_active',
+      'answers',
+      'answers.right_choice'
+    )
+    .where('questions.question_id', 'answers.question_id')
 }
 
 /**
