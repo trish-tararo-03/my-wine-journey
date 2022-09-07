@@ -6,7 +6,7 @@ exports.up = function (knex) {
   return knex.schema.createTable('questions', (table) => {
     table.increments('question_id').primary()
     table.string('question')
-    table.boolean('is_active')
+    table.boolean('is_active').default('false')
   })
 }
 

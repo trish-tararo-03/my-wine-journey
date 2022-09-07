@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
       res.json(item)
     })
     .catch((err) => {
-      console.err(err.message)
+      console.error(err.message)
       res.status(500).send('Server error')
     })
 })
