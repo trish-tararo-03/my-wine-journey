@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
   return db
     .getQuestionAndAnswers()
     .then((item) => {
-      // console.log(item)
+      console.log(item)
       res.json(item)
     })
     .catch((err) => {
