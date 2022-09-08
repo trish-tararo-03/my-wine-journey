@@ -17,9 +17,9 @@ function getQuestionAndAnswers(db = connection) {
     .select(
       'questions.question_id',
       'questions.question',
-      'answers.answers_id',
       'questions.is_active',
-      'answers',
+      'answers.answers_id',
+      'answers.answers',
       'answers.right_choice'
     )
 }
