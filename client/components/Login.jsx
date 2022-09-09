@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom'
 import Container from '../../server/public/styledComponents/Container'
 import Row from '../../server/public/styledComponents/Row'
 import Button from '../../server/public/styledComponents/Button'
+import { Title } from '../../server/public/styledComponents/Title'
 
 export default function Login() {
   return (
     <>
       <Container>
         <Row>
-          <h1>My Wine Journey</h1>
+          <Title fontSize={'2.5rem'}>My Wine Journey</Title>
           <Link to="/Home">
             <Button>Enter</Button>
           </Link>
