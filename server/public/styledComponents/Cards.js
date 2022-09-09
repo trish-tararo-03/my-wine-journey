@@ -6,6 +6,8 @@ export const Cards = styled.div`
   justify-content: center;
   align-items: center;
   border: 1px solid yellow;
+  border-radius: 15px;
   width: 80%;
   padding: 0.5em;
+  margin: 0.5em 0;
 `

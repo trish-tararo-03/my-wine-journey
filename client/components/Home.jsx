@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
+import { StyledLink } from '../../server/public/styledComponents/Navigation'
 import Container from '../../server/public/styledComponents/Container'
 import Row from '../../server/public/styledComponents/Row'
 import Title from '../../server/public/styledComponents/Title'
@@ -18,7 +18,9 @@ export default function Home() {
         <Cards>
           <Subtitle fontSize="1.25rem">Learn</Subtitle>
           <Paragraph>Test your wine knowledge with a quiz!</Paragraph>
-          <Button>Take the Quiz</Button>
+          <StyledLink to="/Quiz">
+            <Button>Take the Quiz</Button>
+          </StyledLink>
         </Cards>
       </Row>
     </Container>
