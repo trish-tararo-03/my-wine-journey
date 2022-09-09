@@ -5,7 +5,7 @@ const Header = styled.header`
   display: flex;
 `
 const StyledNav = styled.nav`
-  border: 2px solid green;
+  /* border: 2px solid green; */
   width: 100%;
   height: max-content;
   position: relative;
@@ -17,8 +17,7 @@ const Logo = styled.span`
   justify-content: center;
   align-items: center;
   margin: 1em auto;
-
-  border: 3px solid yellow;
+  /* border: 3px solid yellow; */
 `
 
 const NavMenu = styled.ul`
