@@ -11,16 +11,16 @@ function getOneQuestion(id, db = connection) {
 }
 
 function getQuestionAndAnswers(db = connection) {
-  console.log('We Here')
+  // console.log('We Here')
   return db('answers')
     .join('questions', 'questions.question_id', 'answers.question_id')
     .select(
-      'questions.question_id',
+      'questions.question_id as questionId',
       'questions.question',
       'questions.is_active',
-      'answers.answers_id',
+      'answers.answers_id as answersId',
       'answers.answers',
-      'answers.right_choice'
+      'answers.right_choice as rightChoice'
     )
 }
 

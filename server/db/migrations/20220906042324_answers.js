@@ -6,8 +6,8 @@ exports.up = function (knex) {
   return knex.schema.createTable('answers', (table) => {
     table.increments('answers_id').primary()
     table.integer('question_id')
-    table.varchar('answers')
-    table.varchar('right_choice')
+    table.specificType('answers', 'text ARRAY')
+    table.text('right_choice')
   })
 }
 

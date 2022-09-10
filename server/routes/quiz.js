@@ -6,7 +6,7 @@ const db = require('../db/db')
 const router = express.Router()
 
 //get questions route?
-///api/v1/questions
+///api/v1/quiz
 router.get('/', (req, res) => {
   return db
     .getQuestionAndAnswers()
