@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { getQuiz } from '../api/apiClient'
 
+//Styled Components
+import Container from '../../server/public/styledComponents/Container'
+import Row from '../../server/public/styledComponents/Row'
+import Button from '../../server/public/styledComponents/Button'
+
 export default function Quiz() {
   const [quiz, setQuiz] = useState([])
 
@@ -16,30 +21,35 @@ export default function Quiz() {
 
   return (
     <>
-      {quiz.map((element, i) => {
-        const {
-          questionId,
-          question,
-          answersId,
-          choice1,
-          choice2,
-          choice3,
-          choice4,
-          rightChoice,
-        } = element
+      <Container>
+        <Row>
+          {quiz.map((element) => {
+            const {
+              questionId,
+              question,
+              answersId,
+              choice1,
+              choice2,
+              choice3,
+              choice4,
+              rightChoice,
+            } = element
 
-        return (
-          <>
-            <h2 key={questionId}>Question {questionId}</h2>
-            <p key={i}>{question}</p>
-
-            <li key={choice1}>{choice1}</li>
-            <li key={choice2}>{choice2}</li>
-            <li key={choice3}>{choice3}</li>
-            <li key={choice4}>{choice4}</li>
-          </>
-        )
-      })}
+            return (
+              <>
+                <h2 key={questionId}>Question {questionId}</h2>
+                <p key={question}>{question}</p>
+                <ul>
+                  <Button key={choice1}>{choice1}</Button>
+                  <Button key={choice2}>{choice2}</Button>
+                  <Button key={choice3}>{choice3}</Button>
+                  <Button key={choice4}>{choice4}</Button>
+                </ul>
+              </>
+            )
+          })}
+        </Row>
+      </Container>
     </>
   )
 }
