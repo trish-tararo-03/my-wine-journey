@@ -19,7 +19,10 @@ function getQuestionAndAnswers(db = connection) {
       'questions.question',
       'questions.is_active',
       'answers.answers_id as answersId',
-      'answers.answers',
+      'answers.choice_1 as choice1',
+      'answers.choice_2 as choice2',
+      'answers.choice_3 as choice3',
+      'answers.choice_4 as choice4',
       'answers.right_choice as rightChoice'
     )
 }

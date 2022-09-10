@@ -15,10 +15,31 @@ export default function Quiz() {
   }, [])
 
   return (
-    <div>
+    <>
       {quiz.map((element, i) => {
-        return <h2 key={i}>{element.answers}</h2>
+        const {
+          questionId,
+          question,
+          answersId,
+          choice1,
+          choice2,
+          choice3,
+          choice4,
+          rightChoice,
+        } = element
+
+        return (
+          <>
+            <h2 key={questionId}>Question {questionId}</h2>
+            <p key={i}>{question}</p>
+
+            <li key={choice1}>{choice1}</li>
+            <li key={choice2}>{choice2}</li>
+            <li key={choice3}>{choice3}</li>
+            <li key={choice4}>{choice4}</li>
+          </>
+        )
       })}
-    </div>
+    </>
   )
 }
