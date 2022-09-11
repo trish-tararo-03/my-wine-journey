@@ -15,6 +15,8 @@ export default function Quiz() {
   const [score, setScore] = useState(0)
   // const [showScore, setShowScore] = useState(false)
 
+  // const quizLength = 10
+
   useEffect(() => {
     getQuiz()
       .then((item) => {
@@ -30,48 +32,58 @@ export default function Quiz() {
       <Container>
         <Row>
           <Wrapper>
+            <Subtitle>Wine Regions of New Zealand</Subtitle>
+            <Paragraph>
+              Test your knowledge about the different wine regions of New
+              Zealand, and the different grape varieties each region is most
+              known for
+            </Paragraph>
             {quiz.map((element, i) => {
               const {
                 questionId,
                 question,
-                // answersId,
                 choice1,
                 choice2,
                 choice3,
                 choice4,
                 rightChoice,
-                // is_active,
               } = element
 
-              function handleClick(evt) {
-                let choice = evt.target
-                console.log(choice)
+              function handleChoiceClick(evt) {
+                const choice = evt.target
+
                 if (choice.textContent === rightChoice) {
-                  Button.backgroundColor = 'green'
-                  alert('Correct')
+                  choice.style.backgroundColor = 'green'
                   setScore(score + 1)
+                }
+                if (choice.textContent !== rightChoice) {
+                  choice.style.backgroundColor = 'red'
                 }
               }
 
               return (
                 <>
-                  <Cards key={i}>
+                  <Cards key={i} id="quiz-card">
                     <Subtitle key={questionId}>
                       Question {questionId}/10
                     </Subtitle>
                     <Paragraph key={question}>{question}</Paragraph>
 
                     <Wrapper padding="1em">
-                      <Button type="button" key={choice1} onClick={handleClick}>
+                      <Button
+                        type="button"
+                        key={choice1}
+                        onClick={handleChoiceClick}
+                      >
                         {choice1}
                       </Button>
-                      <Button key={choice2} onClick={handleClick}>
+                      <Button key={choice2} onClick={handleChoiceClick}>
                         {choice2}
                       </Button>
-                      <Button key={choice3} onClick={handleClick}>
+                      <Button key={choice3} onClick={handleChoiceClick}>
                         {choice3}
                       </Button>
-                      <Button key={choice4} onClick={handleClick}>
+                      <Button key={choice4} onClick={handleChoiceClick}>
                         {choice4}
                       </Button>
                     </Wrapper>
