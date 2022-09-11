@@ -7,7 +7,7 @@ const Button = styled.button`
   margin: 0.25em 0;
 
   border: 2px outset black;
-  background-color: ${(props) => props.bgColor || 'palevioletred'};
+  background-color: ${(props) => props.backgroundColor || 'palevioletred'};
   color: white;
 
   &:hover {
