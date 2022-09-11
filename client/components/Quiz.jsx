@@ -7,10 +7,13 @@ import Row from '../../server/public/styledComponents/Row'
 import Button from '../../server/public/styledComponents/Button'
 import { Wrapper } from '../../server/public/styledComponents/Wrapper'
 import { Cards } from '../../server/public/styledComponents/Cards'
+import { Subtitle } from '../../server/public/styledComponents/Subtitle'
+import { Paragraph } from '../../server/public/styledComponents/Paragraph'
 
 export default function Quiz() {
   const [quiz, setQuiz] = useState([])
   const [score, setScore] = useState(0)
+  // const [showScore, setShowScore] = useState(false)
 
   useEffect(() => {
     getQuiz()
@@ -26,36 +29,40 @@ export default function Quiz() {
     <>
       <Container>
         <Row>
-          {quiz.map((element) => {
-            const {
-              questionId,
-              question,
-              answersId,
-              choice1,
-              choice2,
-              choice3,
-              choice4,
-              rightChoice,
-              is_active,
-            } = element
+          <Wrapper>
+            {quiz.map((element, i) => {
+              const {
+                questionId,
+                question,
+                // answersId,
+                choice1,
+                choice2,
+                choice3,
+                choice4,
+                rightChoice,
+                // is_active,
+              } = element
 
-            function handleClick(evt) {
-              let choice = evt.target
-              if (choice.textContent === rightChoice) {
-                setScore(score + 1)
-                alert('Correct')
+              function handleClick(evt) {
+                let choice = evt.target
+                console.log(choice)
+                if (choice.textContent === rightChoice) {
+                  Button.backgroundColor = 'green'
+                  alert('Correct')
+                  setScore(score + 1)
+                }
               }
-            }
 
-            return (
-              <>
-                <Wrapper>
-                  <Cards>
-                    <h2 key={questionId}>Question {questionId}/10</h2>
-                    <p key={question}>{question}</p>
+              return (
+                <>
+                  <Cards key={i}>
+                    <Subtitle key={questionId}>
+                      Question {questionId}/10
+                    </Subtitle>
+                    <Paragraph key={question}>{question}</Paragraph>
 
                     <Wrapper padding="1em">
-                      <Button key={choice1} onClick={handleClick}>
+                      <Button type="button" key={choice1} onClick={handleClick}>
                         {choice1}
                       </Button>
                       <Button key={choice2} onClick={handleClick}>
@@ -69,10 +76,10 @@ export default function Quiz() {
                       </Button>
                     </Wrapper>
                   </Cards>
-                </Wrapper>
-              </>
-            )
-          })}
+                </>
+              )
+            })}
+          </Wrapper>
         </Row>
       </Container>
     </>
