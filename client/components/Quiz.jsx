@@ -35,15 +35,29 @@ export default function Quiz() {
               rightChoice,
             } = element
 
+            function handleClick(evt) {
+              let choice = evt.target
+              if (choice.textContent === rightChoice) {
+                alert('Correct')
+              }
+            }
             return (
               <>
                 <h2 key={questionId}>Question {questionId}</h2>
                 <p key={question}>{question}</p>
                 <ul>
-                  <Button key={choice1}>{choice1}</Button>
-                  <Button key={choice2}>{choice2}</Button>
-                  <Button key={choice3}>{choice3}</Button>
-                  <Button key={choice4}>{choice4}</Button>
+                  <Button key={choice1} onClick={handleClick}>
+                    {choice1}
+                  </Button>
+                  <Button key={choice2} onClick={handleClick}>
+                    {choice2}
+                  </Button>
+                  <Button key={choice3} onClick={handleClick}>
+                    {choice3}
+                  </Button>
+                  <Button key={choice4} onClick={handleClick}>
+                    {choice4}
+                  </Button>
                 </ul>
               </>
             )
