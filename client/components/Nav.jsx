@@ -23,17 +23,28 @@ export default function Nav() {
     <Header>
       <StyledNav>
         <Logo>
-          <StyledLink to="/Home">MWJ</StyledLink>
+          <StyledLink to="/Home" id="logo">
+            My Wine Journey
+          </StyledLink>
           <NavToggle onClick={handleClick}>
             <span>{navOpen ? <FaTimes /> : <FaBars />}</span>
           </NavToggle>
         </Logo>
         <NavMenu navOpen={navOpen}>
           <MenuItem>
-            <StyledLink to="/Learn">Learn</StyledLink>
+            <StyledLink to="/Home" className="nav-link">
+              Home
+            </StyledLink>
           </MenuItem>
           <MenuItem>
-            <StyledLink to="/Notes">Notes</StyledLink>
+            <StyledLink to="/Quiz" className="nav-link">
+              Quiz
+            </StyledLink>
+          </MenuItem>
+          <MenuItem>
+            <StyledLink to="/Notes" className="nav-link">
+              Notes
+            </StyledLink>
           </MenuItem>
         </NavMenu>
       </StyledNav>
